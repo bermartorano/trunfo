@@ -1,4 +1,5 @@
 import React from 'react';
+// Só para fazer o commit.
 
 class App extends React.Component {
   render() {
