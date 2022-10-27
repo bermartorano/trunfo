@@ -1,11 +1,12 @@
 import React from 'react';
-// Só para fazer o commit.
+import Form from './components/Form';
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <h1>Tryunfo</h1>
+        <Form />
       </div>
     );
   }
