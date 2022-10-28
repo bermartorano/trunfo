@@ -12,6 +12,7 @@ class App extends React.Component {
     cardImage: '',
     cardRare: '',
     cardTrunfo: false,
+    isSaveButtonDisabled: false,
   };
 
   onInputChange = ({ target }) => {
@@ -20,6 +21,49 @@ class App extends React.Component {
 
     this.setState({
       [name]: value,
+    }, () => {
+      const {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+      } = this.state;
+
+      const attributeValidation = (param) => {
+        const lengthUperLimit = 91;
+        const lengthBottonLimit = -1;
+        const result = param > lengthBottonLimit && param < lengthUperLimit;
+        return result;
+      };
+
+      const sumLimit = 211;
+      const cardNameValidation = cardName.length > 0;
+      const cardImageValidation = cardImage.length > 0;
+      const cardDescriptionValidation = cardDescription.length > 0;
+      const cardAttr1Validation = attributeValidation(cardAttr1);
+      const cardAttr2Validation = attributeValidation(cardAttr2);
+      const cardAttr3Validation = attributeValidation(cardAttr3);
+      const cardAttr1Num = parseInt(cardAttr1, 10);
+      const cardAttr2Num = parseInt(cardAttr2, 10);
+      const cardAttr3Num = parseInt(cardAttr3, 10);
+      const attrSumValidation = cardAttr1Num + cardAttr2Num + cardAttr3Num < sumLimit;
+
+      const validationVector = [
+        cardNameValidation,
+        cardImageValidation,
+        cardDescriptionValidation,
+        cardAttr1Validation,
+        cardAttr2Validation,
+        cardAttr3Validation,
+        attrSumValidation,
+      ];
+
+      const inputValidation = validationVector.every((v) => v === true);
+      this.setState({
+        isSaveButtonDisabled: inputValidation,
+      });
     });
   };
 
@@ -35,6 +79,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      isSaveButtonDisabled,
     } = this.state;
 
     return (
@@ -50,7 +95,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
           hasTrunfo={ false }
-          isSaveButtonDisabled={ false }
+          isSaveButtonDisabled={ !isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
