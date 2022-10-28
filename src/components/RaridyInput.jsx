@@ -6,9 +6,9 @@ class RaridyInput extends Component {
 
     return (
       <label htmlFor="raridy-input">
-        RaridyInput
+        Raridade
         <select
-          name="raridy"
+          name="cardRare"
           id="raridy-input"
           data-testid="rare-input"
           onChange={ onInputChange }

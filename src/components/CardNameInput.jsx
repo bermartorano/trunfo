@@ -8,6 +8,7 @@ class CardNameInput extends Component {
       <label htmlFor="card-name">
         Nome da carta
         <input
+          name="cardName"
           type="text"
           data-testid="name-input"
           id="card-name"

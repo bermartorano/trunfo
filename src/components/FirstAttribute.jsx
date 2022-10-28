@@ -8,6 +8,7 @@ class FirstAttribute extends Component {
       <label htmlFor="first-att">
         Primeiro Atributo
         <input
+          name="cardAttr1"
           type="number"
           id="first-att"
           data-testid="attr1-input"

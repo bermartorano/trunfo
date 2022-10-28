@@ -9,7 +9,7 @@ class SuperTrunfoOrNot extends Component {
         Super Trunfo
         <input
           type="checkbox"
-          name="superTrunfo"
+          name="cardTrunfo"
           id="super-trunfo"
           data-testid="trunfo-input"
           checked={ cardTrunfo }

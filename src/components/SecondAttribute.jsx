@@ -8,10 +8,10 @@ class SecondAttribute extends Component {
       <label htmlFor="second-att">
         Segundo Atributo:
         <input
+          name="cardAttr2"
           type="number"
           id="second-att"
           data-testid="attr2-input"
-          name="segundoAtributo"
           value={ cardAttr2 }
           onChange={ onInputChange }
         />

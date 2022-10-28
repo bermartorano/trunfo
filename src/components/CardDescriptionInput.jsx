@@ -8,6 +8,7 @@ class CardDescriptionInput extends Component {
       <label htmlFor="card-description">
         Descrição da carta
         <input
+          name="cardDescription"
           type="textarea"
           data-testid="description-input"
           id="card-description"

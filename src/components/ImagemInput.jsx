@@ -7,7 +7,7 @@ class ImagemInput extends Component {
     return (
       <label htmlFor="input-img">
         <input
-          name="image"
+          name="cardImage"
           type="text"
           id="input-img"
           data-testid="image-input"
