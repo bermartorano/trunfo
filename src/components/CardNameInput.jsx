@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class CardNameInput extends Component {
   render() {
@@ -22,3 +23,13 @@ class CardNameInput extends Component {
 }
 
 export default CardNameInput;
+
+CardNameInput.propTypes = {
+  cardName: PropTypes.string,
+  onInputChange: PropTypes.func,
+};
+
+CardNameInput.defaultProps = {
+  cardName: '',
+  onInputChange: () => console.log('oi'),
+};

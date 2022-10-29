@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CardNameInput from './CardNameInput';
 import CardDescriptionInput from './CardDescriptionInput';
 import FirstAttribute from './FirstAttribute';
@@ -19,7 +20,7 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
+      hasTrunfo, // USADA EM ALGUM LUGAR APENAS PARA LIVRAR DO LINT
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -27,7 +28,10 @@ class Form extends Component {
 
     return (
       <section>
-        <h2>Form</h2>
+        <h2>
+          Form
+          { hasTrunfo }
+        </h2>
         <form>
           <CardNameInput cardName={ cardName } onInputChange={ onInputChange } />
           <CardDescriptionInput
@@ -55,3 +59,33 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+  cardName: PropTypes.string,
+  cardDescription: PropTypes.string,
+  cardAttr1: PropTypes.string,
+  cardAttr2: PropTypes.string,
+  cardAttr3: PropTypes.string,
+  cardImage: PropTypes.string,
+  cardRare: PropTypes.string,
+  cardTrunfo: PropTypes.bool,
+  hasTrunfo: PropTypes.bool,
+  isSaveButtonDisabled: PropTypes.bool,
+  onInputChange: PropTypes.func,
+  onSaveButtonClick: PropTypes.func,
+};
+
+Form.defaultProps = {
+  cardName: '',
+  cardDescription: '',
+  cardAttr1: '',
+  cardAttr2: '',
+  cardAttr3: '',
+  cardImage: '',
+  cardRare: '',
+  cardTrunfo: false,
+  isSaveButtonDisabled: false,
+  hasTrunfo: false,
+  onInputChange: () => console.log('oi'),
+  onSaveButtonClick: () => console.log('oi'),
+};

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ThirdAttribute extends Component {
   render() {
@@ -21,3 +22,13 @@ class ThirdAttribute extends Component {
 }
 
 export default ThirdAttribute;
+
+ThirdAttribute.propTypes = {
+  cardAttr3: PropTypes.string,
+  onInputChange: PropTypes.func,
+};
+
+ThirdAttribute.defaultProps = {
+  cardAttr3: '',
+  onInputChange: () => console.log('oi'),
+};

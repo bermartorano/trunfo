@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class RaridyInput extends Component {
   render() {
@@ -24,3 +25,13 @@ class RaridyInput extends Component {
 }
 
 export default RaridyInput;
+
+RaridyInput.propTypes = {
+  cardRare: PropTypes.string,
+  onInputChange: PropTypes.func,
+};
+
+RaridyInput.defaultProps = {
+  cardRare: '',
+  onInputChange: () => console.log('oi'),
+};

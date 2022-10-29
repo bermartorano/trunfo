@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SuperTrunfoOrNot extends Component {
   render() {
@@ -21,3 +22,13 @@ class SuperTrunfoOrNot extends Component {
 }
 
 export default SuperTrunfoOrNot;
+
+SuperTrunfoOrNot.propTypes = {
+  cardTrunfo: PropTypes.string,
+  onInputChange: PropTypes.func,
+};
+
+SuperTrunfoOrNot.defaultProps = {
+  cardTrunfo: '',
+  onInputChange: () => console.log('oi'),
+};

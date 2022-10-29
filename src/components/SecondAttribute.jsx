@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SecondAttribute extends Component {
   render() {
@@ -21,3 +22,13 @@ class SecondAttribute extends Component {
 }
 
 export default SecondAttribute;
+
+SecondAttribute.propTypes = {
+  cardAttr2: PropTypes.string,
+  onInputChange: PropTypes.func,
+};
+
+SecondAttribute.defaultProps = {
+  cardAttr2: '',
+  onInputChange: () => console.log('oi'),
+};
