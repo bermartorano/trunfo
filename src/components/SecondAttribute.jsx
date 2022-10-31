@@ -24,11 +24,11 @@ class SecondAttribute extends Component {
 export default SecondAttribute;
 
 SecondAttribute.propTypes = {
-  cardAttr2: PropTypes.number,
+  cardAttr2: PropTypes.string,
   onInputChange: PropTypes.func,
 };
 
 SecondAttribute.defaultProps = {
-  cardAttr2: '',
+  cardAttr2: '0',
   onInputChange: () => console.log('oi'),
 };

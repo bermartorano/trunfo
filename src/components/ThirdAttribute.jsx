@@ -24,11 +24,11 @@ class ThirdAttribute extends Component {
 export default ThirdAttribute;
 
 ThirdAttribute.propTypes = {
-  cardAttr3: PropTypes.number,
+  cardAttr3: PropTypes.string,
   onInputChange: PropTypes.func,
 };
 
 ThirdAttribute.defaultProps = {
-  cardAttr3: '',
+  cardAttr3: '0',
   onInputChange: () => console.log('oi'),
 };

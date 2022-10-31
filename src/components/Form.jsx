@@ -30,7 +30,6 @@ class Form extends Component {
       <section>
         <h2>
           Form
-          { hasTrunfo }
         </h2>
         <form>
           <CardNameInput cardName={ cardName } onInputChange={ onInputChange } />
@@ -43,7 +42,11 @@ class Form extends Component {
           <ThirdAttribute cardAttr3={ cardAttr3 } onInputChange={ onInputChange } />
           <ImagemInput cardImage={ cardImage } onInputChange={ onInputChange } />
           <RaridyInput cardRare={ cardRare } onInputChange={ onInputChange } />
-          <SuperTrunfoOrNot cardTrunfo={ cardTrunfo } onInputChange={ onInputChange } />
+          <SuperTrunfoOrNot
+            hasTrunfo={ hasTrunfo }
+            cardTrunfo={ cardTrunfo }
+            onInputChange={ onInputChange }
+          />
           <button
             disabled={ isSaveButtonDisabled }
             type="button"
@@ -63,9 +66,9 @@ export default Form;
 Form.propTypes = {
   cardName: PropTypes.string,
   cardDescription: PropTypes.string,
-  cardAttr1: PropTypes.number,
-  cardAttr2: PropTypes.number,
-  cardAttr3: PropTypes.number,
+  cardAttr1: PropTypes.string,
+  cardAttr2: PropTypes.string,
+  cardAttr3: PropTypes.string,
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
   cardTrunfo: PropTypes.bool,
@@ -78,9 +81,9 @@ Form.propTypes = {
 Form.defaultProps = {
   cardName: '',
   cardDescription: '',
-  cardAttr1: '',
-  cardAttr2: '',
-  cardAttr3: '',
+  cardAttr1: '0',
+  cardAttr2: '0',
+  cardAttr3: '0',
   cardImage: '',
   cardRare: '',
   cardTrunfo: false,

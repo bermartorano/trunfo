@@ -6,14 +6,15 @@ class App extends React.Component {
   state = {
     cardName: '',
     cardDescription: '',
-    cardAttr1: 0,
-    cardAttr2: 0,
-    cardAttr3: 0,
+    cardAttr1: '0',
+    cardAttr2: '0',
+    cardAttr3: '0',
     cardImage: '',
     cardRare: 'Normal',
     cardTrunfo: false,
     isSaveButtonDisabled: false,
     savedDeck: [],
+    hasTrunfo: false,
   };
 
   formValidation = () => {
@@ -74,9 +75,9 @@ class App extends React.Component {
     this.setState({
       cardName: '',
       cardDescription: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: 'Normal',
       cardTrunfo: false,
@@ -95,10 +96,18 @@ class App extends React.Component {
       savedCard[key] = value;
     });
 
-    savedDeckCopied.push(savedCard);
-    this.setState({
-      savedDeck: savedDeckCopied,
-    });
+    if (savedCard.cardTrunfo) {
+      savedDeckCopied.push(savedCard);
+      this.setState({
+        hasTrunfo: true,
+        savedDeck: savedDeckCopied,
+      });
+    } else {
+      savedDeckCopied.push(savedCard);
+      this.setState({
+        savedDeck: savedDeckCopied,
+      });
+    }
   };
 
   onSaveButtonClick = () => {
@@ -117,6 +126,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       isSaveButtonDisabled,
+      hasTrunfo,
     } = this.state;
 
     return (
@@ -131,7 +141,7 @@ class App extends React.Component {
           cardImage={ cardImage }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
-          hasTrunfo={ false }
+          hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ !isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
