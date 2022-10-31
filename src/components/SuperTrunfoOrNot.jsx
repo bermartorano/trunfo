@@ -24,7 +24,7 @@ class SuperTrunfoOrNot extends Component {
 export default SuperTrunfoOrNot;
 
 SuperTrunfoOrNot.propTypes = {
-  cardTrunfo: PropTypes.string,
+  cardTrunfo: PropTypes.bool,
   onInputChange: PropTypes.func,
 };
 

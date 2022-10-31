@@ -24,7 +24,7 @@ class ThirdAttribute extends Component {
 export default ThirdAttribute;
 
 ThirdAttribute.propTypes = {
-  cardAttr3: PropTypes.string,
+  cardAttr3: PropTypes.number,
   onInputChange: PropTypes.func,
 };
 

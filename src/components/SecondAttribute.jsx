@@ -24,7 +24,7 @@ class SecondAttribute extends Component {
 export default SecondAttribute;
 
 SecondAttribute.propTypes = {
-  cardAttr2: PropTypes.string,
+  cardAttr2: PropTypes.number,
   onInputChange: PropTypes.func,
 };
 

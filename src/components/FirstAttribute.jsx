@@ -24,7 +24,7 @@ class FirstAttribute extends Component {
 export default FirstAttribute;
 
 FirstAttribute.propTypes = {
-  cardAttr1: PropTypes.string,
+  cardAttr1: PropTypes.number,
   onInputChange: PropTypes.func,
 };
 
